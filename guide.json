@@ -1,0 +1,119 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "morphicons",
+    "nameCn": "Morphicons",
+    "repoName": "morphicons-deploy-guide",
+    "oneLiner": "3.0k stars，MIT，任意 SVG 图标互相变形，弹簧物理，零运行时依赖 ~7 KB gzip",
+    "officialRepo": "https://github.com/guillermolg00/morphicons",
+    "officialDocs": "https://www.morphicons.com",
+    "stars": "3.0k",
+    "license": "MIT",
+    "highlights": [
+      "3.0k stars：2026-08 建仓，两个月破三千",
+      "零运行时依赖：核心只有 6.7 KB gzip",
+      "任意图标互变：描边与填充都支持，颜色跟随形状",
+      "多框架：React / Vue / Svelte / Astro / React Native / 原生 DOM",
+      "弹簧物理：snappy / smooth / bouncy 三档预设，也可自定义刚度与阻尼",
+      "SSR 友好：服务端直接渲染终态 SVG，水合不闪"
+    ],
+    "mcpSupport": "Morphicons 不是 MCP server，是一个前端组件库；本仓库只负责安装与示例，不注册 MCP。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-27",
+    "verification": [
+      [
+        "npm install morphicons 实测成功，装到 v2.0.2（Windows / Node 22.14.0，耗时 2 秒）",
+        "已实测 2026-10-27"
+      ],
+      [
+        "实测 import('morphicons') 导出 SPRING_PRESETS / Spring / buildPlan / fitIcon / iconToCubics 等 11 个符号",
+        "已实测 2026-10-27"
+      ],
+      [
+        "实测 import('morphicons/dom') 导出 createMorph / preloadRegion / setRegionLoader 等 5 个符号",
+        "已实测 2026-10-27"
+      ],
+      [
+        "package.json 确认 exports 含 . / dom / adapters / region / react / vue / svelte / element / astro / react-native 十个入口",
+        "已核对 2026-10-27"
+      ],
+      [
+        "仓库元数据核对：3,042 stars、95 forks、MIT、2026-08-01 建仓，最新 release v2.0.2",
+        "已核对 2026-10-27"
+      ],
+      [
+        "未实测浏览器内动效渲染与填充图标懒加载",
+        "说明 2026-10-27"
+      ]
+    ],
+    "deploy": {
+      "type": "script",
+      "requires": [
+        "node"
+      ],
+      "steps": [
+        "mkdir -p morphicons-demo && cd morphicons-demo",
+        "npm init -y",
+        "npm install morphicons",
+        "npm ls morphicons",
+        "echo \"安装完成：import { MorphIcon } from 'morphicons/react' 即可使用\""
+      ],
+      "stepsPs": [
+        "New-Item -ItemType Directory -Force -Path morphicons-demo | Out-Null",
+        "Set-Location morphicons-demo",
+        "npm.cmd init -y",
+        "npm.cmd install morphicons",
+        "npm.cmd ls morphicons",
+        "Write-Host '安装完成：import { MorphIcon } from \"morphicons/react\" 即可使用'"
+      ],
+      "source": "https://github.com/guillermolg00/morphicons#install"
+    },
+    "pitfalls": [
+      "图标不动：Lucide 要从 `lucide` 导入图标数据，不要从 `lucide-react` 导入组件",
+      "peer 版本不满足：Vue 需 >=3.3、Svelte >=5、React >=18",
+      "React Native 报 exports 错：需要 Metro 支持 package exports（0.79+ 默认开启）",
+      "图标尺寸不对：非 24×24 网格用 `fitIcon(icon, 32)` 或 `svgToIcon` 适配",
+      "填充图标首次卡顿：提前调用 `preloadRegion()` 预加载",
+      "改了 prop 没动画：确认没有同时传 `from` / `to`，它们会覆盖 `icon`"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/morphicons-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/morphicons-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "Morphicons 安装",
+    "Morphicons 部署",
+    "SVG 图标 变形 动画",
+    "图标 morph 动画",
+    "React 图标动画 库",
+    "Lucide 图标 动画",
+    "弹簧动画 图标",
+    "morphicons react",
+    "前端 图标 过渡",
+    "图标 形变 零依赖"
+  ],
+  "topics": [
+    "icons",
+    "svg",
+    "animation",
+    "morphing",
+    "typescript",
+    "react",
+    "frontend"
+  ]
+}
